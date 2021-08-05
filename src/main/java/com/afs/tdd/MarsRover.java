@@ -35,7 +35,13 @@ public class MarsRover {
     }
 
     private void move() {
-        roverStatus = new RoverStatus(roverStatus.getLocationX(), roverStatus.getLocationY()+1, roverStatus.getDirection());
+        if(roverStatus.getDirection().equals("S")){
+            roverStatus = new RoverStatus(roverStatus.getLocationX(), roverStatus.getLocationY()-1, roverStatus.getDirection());
+        }
+        if(roverStatus.getLocationY() >=0){
+            roverStatus = new RoverStatus(roverStatus.getLocationX(), roverStatus.getLocationY()+1, roverStatus.getDirection());
+        }
+
 
     }
 
