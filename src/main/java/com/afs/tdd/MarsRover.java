@@ -12,7 +12,7 @@ public class MarsRover {
         } else if("L".equals(command)){
             turnLeft();
         } else if("R".equals(command)) {
-        turnRight();
+            turnRight();
     }
 
 }
@@ -29,6 +29,10 @@ public class MarsRover {
         if( direction.equals("N")){
            String newDirection = "W";
            roverStatus = new RoverStatus(roverStatus.getLocationX(), getRoverStatus().getLocationY(), newDirection);
+        }else if( direction.equals("S")){
+            String newDirection = "E";
+            roverStatus = new RoverStatus(roverStatus.getLocationX(), getRoverStatus().getLocationY(), newDirection);
+
         }
 
 
