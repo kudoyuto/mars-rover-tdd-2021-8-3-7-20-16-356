@@ -11,6 +11,17 @@ public class MarsRover {
             move();
         } else if("L".equals(command)){
             turnLeft();
+        } else if("R".equals(command)) {
+            turnRight();
+        }
+
+    }
+
+    private void turnRight() {
+        final String direction = roverStatus.getDirection();
+        if( direction.equals("N")){
+            String newDirection = "E";
+            roverStatus = new RoverStatus(roverStatus.getLocationX(), getRoverStatus().getLocationY(), newDirection);
         }
     }
 
@@ -25,7 +36,13 @@ public class MarsRover {
     }
 
     private void move() {
-        roverStatus = new RoverStatus(roverStatus.getLocationX(), roverStatus.getLocationY()+1, roverStatus.getDirection());
+        if(roverStatus.getDirection().equals("S")){
+            roverStatus = new RoverStatus(roverStatus.getLocationX(), roverStatus.getLocationY()-1, roverStatus.getDirection());
+        }
+        if(roverStatus.getLocationY() >=0){
+            roverStatus = new RoverStatus(roverStatus.getLocationX(), roverStatus.getLocationY()+1, roverStatus.getDirection());
+        }
+
 
     }
 
