@@ -116,5 +116,15 @@ class MarsRoverTest {
         //then
         assertEquals(expectedRoverStatus.getDirection(),marsRover.getRoverStatus().getDirection());
     }
+    @Test
+    void should_return_location_x_0_location_y_0_direction_N_when_execute_command_given_location_x_0_location_y_0_and_R(){
+        //given
+        MarsRover marsRover = new MarsRover(new RoverStatus(0,0,"W"));
+        RoverStatus expectedRoverStatus = new RoverStatus(0,0,"N");
+        //when
+        marsRover.executeCommand("R");
+        //then
+        assertEquals(expectedRoverStatus.getDirection(),marsRover.getRoverStatus().getDirection());
+    }
 
 }
