@@ -9,7 +9,19 @@ public class MarsRover {
     public void executeCommand(String command) {
         if("M".equals(command)){
             move();
+        } else if("L".equals(command)){
+            turnLeft();
         }
+    }
+
+    private void turnLeft() {
+        final String direction = roverStatus.getDirection();
+        if( direction.equals("N")){
+           String newDirection = "W";
+           roverStatus = new RoverStatus(roverStatus.getLocationX(), getRoverStatus().getLocationY(), newDirection);
+        }
+
+
     }
 
     private void move() {
