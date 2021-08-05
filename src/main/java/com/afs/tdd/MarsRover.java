@@ -7,14 +7,10 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if(command.equals("M")){
-            move();
-        }
+
     }
 
-    private void move() {
-        roverStatus = new RoverStatus(roverStatus.getLocationX(), roverStatus.getLocationY()+1, roverStatus.getDirection());
-    }
+
 
     public RoverStatus getRoverStatus() {
         return roverStatus;
